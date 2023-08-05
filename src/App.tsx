@@ -20,9 +20,10 @@ import SubList from './SubList'
 import { Folder, File } from './template'
 
 // ---------------------------------------------------
-const search = window.location.search
+// const search = window.location.search
 // 请在这里更改你需要的 url 参数
 // const search = '?git=github&github=typoverflow/note'
+const search = '?git=github&github=xiaodongxier/BeijngNotes'
 // ---------------------------------------------------
 
 const drawerWidth = 300
@@ -221,7 +222,8 @@ function getQuery(): Query {
         }
     } else {
         if (!result.github) {
-            result.github = 'OrangeX4/NJUAI-Notes'
+            // 预览
+            result.github = 'xiaodongxier/BeijngNotes'
         }
     }
     return result
@@ -290,14 +292,15 @@ export default function App() {
     }
 
     const [currentFile, setCurrentFile] = useState(null as File | null)
-    const [title, setTitle] = useState('GitNotes | OrangeX4\'s Notes')
+    // const [title, setTitle] = useState('GitNotes | OrangeX4\'s Notes')
+    const [title, setTitle] = useState('小东西儿的笔记')
     const [content, setContent] = useState('')
 
     const [freshCount, setFreshCount] = useState(0)
     const fresh = () => setFreshCount(freshCount + 1)
 
 
-    const [githubRepo, setGithubRepo] = useState('OrangeX4/NJUAI-Notes')
+    const [githubRepo, setGithubRepo] = useState('xiaodongxier/BeijngNotes')
     const [githubToken, setGithubToken] = useState('')
     const [gitlabHost, setGitlabHost] = useState('git.nju.edu.cn')
     const [gitlabId, setGitlabId] = useState('2047')
@@ -376,19 +379,19 @@ export default function App() {
                     <div dangerouslySetInnerHTML={{ __html: md.render(contentProcess(content, currentFile)) }} />
                 ) : (
                     <div>
-                        <h1>这是什么?</h1>
+                        {/* <h1>这是什么?</h1>
                         <p>这是一个由 <b>OrangeX4</b> 开发的<b>笔记浏览应用</b>, 用于浏览以 <b>Markdown</b> 书写的, 存放在 <b>GitLab 或 GitHub</b> 上的笔记.</p>
                         <p>优点: <b>数学公式支持和移动端适配.</b></p>
-                        <a href="https://github.com/OrangeX4/GitNotes">GitHub 地址</a>
+                        <a href="https://github.com/OrangeX4/GitNotes">GitHub 地址</a> */}
 
-                        <h1>OrangeX4 的笔记</h1>
-                        <h2><a href="./?git=gitlab">OrangeX4's Notes</a></h2>
-                        <h1>推荐的其他笔记</h1>
-                        <h2><a href="./?git=github&github=typoverflow/note">Typoverflow's Notes</a></h2>
-                        <h2><a href="./?git=github&github=fengdu78/Coursera-ML-AndrewNg-Notes">Coursera-ML-AndrewNg-Notes</a></h2>
-                        <h2><a href="./?git=github&github=fengdu78/Data-Science-Notes">Data-Science-Notes</a></h2>
+                        <h3>我的的笔记</h3>
+                        <h2><a href="./?git=github">GitHub Notes</a></h2>
+                        {/* <h3>推荐的其他笔记</h3> */}
+                        {/* <h2><a href="./?git=github&github=typoverflow/note">Typoverflow's Notes</a></h2> */}
+                        {/* <h2><a href="./?git=github&github=fengdu78/Coursera-ML-AndrewNg-Notes">Coursera-ML-AndrewNg-Notes</a></h2> */}
+                        {/* <h2><a href="./?git=github&github=fengdu78/Data-Science-Notes">Data-Science-Notes</a></h2> */}
 
-                        <h1>GitHub Repo</h1>
+                        {/* <h1>GitHub Repo</h1>
                         <form className={classes.github} noValidate autoComplete="off">
                             <TextField id="standard-basic" value={githubRepo} onChange={(e) => setGithubRepo(e.target.value)} label="Repo" />
                             <TextField id="standard-basic" value={githubToken} onChange={(e) => setGithubToken(e.target.value)} label="Token" />
@@ -410,7 +413,7 @@ export default function App() {
                                 style={{ height: 50, width: 100, fontSize: 16 }}>浏览</Button>
                         </form>
                         <p>Host 是 GitLab 所在的域名, 如 "gitlab.com" 和 "git.nju.edu.cn".</p>
-                        <p>Id 是你要浏览的 GitLab 项目的 Id, 可以在项目页面上找到.</p>
+                        <p>Id 是你要浏览的 GitLab 项目的 Id, 可以在项目页面上找到.</p> */}
                     </div>
                 )}
             </main>
