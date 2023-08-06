@@ -1,5 +1,11 @@
 # GitNotes
 
+---
+yarn build      
+git push
+---
+
+
 这是一个由 **OrangeX4** 开发的笔记浏览应用, 用于浏览以 **Markdown** 书写的, 存放在 **GitLab 或 GitHub** 上的笔记.
 
 优点: **数学公式支持和移动端适配**.
